@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101735">
+<title>Для моей любимой ❤️</title>
+<style>
+  * { box-sizing: border-box; }
+  html { min-height:100%; background:#080d22; }
+  body {
+    margin:0; min-height:100vh; min-height:100svh; padding:34px 16px 28px;
+    display:flex; align-items:center; justify-content:center; overflow-x:hidden;
+    color:#fff7fb; font-family:Georgia,'Times New Roman',serif;
+    background:radial-gradient(ellipse at 50% 32%,#29386c 0%,#17234b 42%,#0b1028 78%,#070b1b 100%);
+  }
+  .stars,.stars:before,.stars:after { position:fixed; inset:0; pointer-events:none; content:""; }
+  .stars { opacity:.72; background-image:radial-gradient(2px 2px at 8% 18%,#fff 98%,transparent),radial-gradient(1px 1px at 19% 72%,#ffe8f2 98%,transparent),radial-gradient(2px 2px at 31% 29%,#fff 98%,transparent),radial-gradient(1px 1px at 43% 83%,#fff 98%,transparent),radial-gradient(2px 2px at 57% 13%,#ffe8f2 98%,transparent),radial-gradient(1px 1px at 68% 63%,#fff 98%,transparent),radial-gradient(2px 2px at 79% 34%,#fff 98%,transparent),radial-gradient(1px 1px at 91% 77%,#ffe8f2 98%,transparent); background-size:310px 260px; animation:twinkle 5s ease-in-out infinite alternate; }
+  .stars:before { opacity:.55; background-image:radial-gradient(1px 1px at 15% 42%,#fff 98%,transparent),radial-gradient(2px 2px at 74% 21%,#ffd8e8 98%,transparent),radial-gradient(1px 1px at 88% 55%,#fff 98%,transparent); background-size:230px 210px; }
+  .stars:after { background:radial-gradient(ellipse at center,transparent 35%,rgba(0,0,0,.22) 100%); }
+  @keyframes twinkle { from{opacity:.42} to{opacity:.9} }
+  .wrap { position:relative; z-index:1; width:min(100%,480px); text-align:center; margin:auto; }
+  .eyebrow { margin:0 0 12px; color:#f6d8e7; font:12px/1.5 Arial,sans-serif; letter-spacing:.24em; text-transform:uppercase; }
+  h1 { margin:0 0 10px; font-size:clamp(28px,7vw,39px); line-height:1.18; font-weight:normal; text-shadow:0 0 22px #ffb9d8a8; }
+  .subtitle { margin:0 0 24px; color:#e8dff5; font:15px/1.5 Arial,sans-serif; }
+  .gift { width:min(100%,390px); min-height:260px; margin:0 auto; padding:26px 22px; border:1px solid rgba(255,220,238,.65); border-radius:22px; background:linear-gradient(145deg,rgba(255,235,245,.17),rgba(255,255,255,.07)); box-shadow:0 20px 70px rgba(0,0,0,.35),0 0 35px rgba(255,174,211,.14); display:flex; flex-direction:column; align-items:center; justify-content:center; }
+  .gift-icon { font-size:58px; line-height:1.2; filter:drop-shadow(0 5px 14px #ffb1d4); margin-bottom:14px; }
+  .gift-title { font-size:27px; line-height:1.3; font-weight:normal; }
+  .gift-note { margin:13px 0 0; color:#f5ddeb; font:13px/1.5 Arial,sans-serif; }
+  button { margin-top:23px; border:1px solid rgba(255,230,241,.8); border-radius:999px; padding:13px 24px; color:#522d4b; background:linear-gradient(135deg,#ffeaf3,#f4cfe1); font: bold 15px Arial,sans-serif; box-shadow:0 7px 24px rgba(0,0,0,.22); cursor:pointer; -webkit-tap-highlight-color:transparent; }
+  button:active { transform:scale(.98); }
+  .letter { display:none; width:min(100%,430px); margin:0 auto; padding:24px 22px 22px; border:1px solid rgba(255,226,239,.9); border-radius:22px; color:#56324f; background:linear-gradient(145deg,#fff5f9,#f5dce9); box-shadow:0 20px 65px rgba(0,0,0,.35),0 0 35px rgba(255,174,211,.18); animation:appear .55s ease both; }
+  .letter.show { display:block; }
+  @keyframes appear { from{opacity:0; transform:translateY(12px) scale(.98)} to{opacity:1;transform:translateY(0) scale(1)} }
+  .letter-hearts { margin:0 0 13px; font-size:29px; }
+  .letter p { margin:0; font-size:clamp(17px,4.6vw,20px); line-height:1.55; overflow-wrap:anywhere; }
+  .signature { margin:17px 0 0; color:#a14e78; font-size:18px; }
+  .footer { margin-top:22px; color:#d6d5eb; font:12px/1.5 Arial,sans-serif; opacity:.85; }
+  .hidden { display:none !important; }
+  @media(max-width:380px) { body{padding:24px 13px} .gift{min-height:240px;padding:22px 16px} .letter{padding:21px 17px} }
+  @media(prefers-reduced-motion:reduce) { *,*::before,*::after{animation:none!important;transition:none!important} }
+</style>
+</head>
+<body>
+<div class="stars" aria-hidden="true"></div>
+<main class="wrap">
+  <p class="eyebrow">✨ маленькое чудо для тебя ✨</p>
+  <h1>Для моей любимой 💗</h1>
+  <p class="subtitle" id="subtitle">У меня для тебя кое-что есть…</p>
+
+  <section class="gift" id="gift" aria-label="Подарочная открытка">
+    <div class="gift-icon">🎁</div>
+    <div class="gift-title">Открыточка<br>для тебя</div>
+    <p class="gift-note">Я приготовил тебе маленький сюрприз</p>
+    <button id="openButton" type="button">Открыть подарочек ❤️</button>
+  </section>
+
+  <section class="letter" id="letter" aria-live="polite">
+    <div class="letter-hearts">💗 ✨ 💗</div>
+    <p>Любимая, эта открыточка для тебя.<br><br>Я хочу сказать, что люблю тебя. Люблю тебя всегда — именно такой, какая ты есть. Ты мой самый близкий и дорогой человек. Спасибо тебе огромное, что появилась в моей жизни. С тобой мне легко и спокойно. Очень хотел тебя порадовать — вот и сделал такое чудо тебе. Надеюсь, понравилось.<br><br>Как проснусь, напишу. Целую, сладких снов тебе, милая ❤️</p>
+    <div class="signature">Твой Сашок ❤️</div>
+  </section>
+  <div class="footer">с любовью, только для тебя ❤️</div>
+</main>
+<script>
+  const button = document.getElementById('openButton');
+  const gift = document.getElementById('gift');
+  const letter = document.getElementById('letter');
+  const subtitle = document.getElementById('subtitle');
+  button.addEventListener('click', () => {
+    gift.classList.add('hidden');
+    letter.classList.add('show');
+    subtitle.textContent = 'Для тебя — от всего моего сердца ❤️';
+  });
+</script>
+</body>
+</html>
